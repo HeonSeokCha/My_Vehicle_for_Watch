@@ -13,4 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "My Vehicle for Watch"
-include ':app'
+
+settings.include(":app")
