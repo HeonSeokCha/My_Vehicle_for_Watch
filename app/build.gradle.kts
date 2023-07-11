@@ -1,7 +1,7 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     kotlin("android")
-    alias(libs.plugins.android.library)
+    alias(libs.plugins.android.application)
 }
 
 android {
@@ -10,10 +10,10 @@ android {
 
     defaultConfig {
         applicationId = "com.chs.myvehicleforwatch"
-        minSdk = libs.version.minSdkVersion.get().toInt()
-        targetSdk = libs.version.targetSdkVersion.get().toInt()
-        versionCode = libs.version.versionCode.get().toInt()
-        versionName = libs.version.versionName.get()
+        minSdk = libs.versions.minSdkVersion.get().toInt()
+        targetSdk = libs.versions.targetSdkVersion.get().toInt()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
 
     }
     buildTypes {
@@ -32,6 +32,15 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+    }
+
     packagingOptions {
         resources.excludes.add("/META-INF/{AL2.0,LGPL2.1}")
     }
@@ -39,4 +48,6 @@ android {
 }
 
 dependencies {
+    implementation(libs.bundles.android)
+    implementation(libs.bundles.compose)
 }

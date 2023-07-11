@@ -16,6 +16,7 @@ androidx-wear-compose = "1.2.0-beta02"
 google-location = "21.0.1"
 kotlin = "1.8.22"
 lifecycle = "2.6.1"
+kotlin-coroutine = "1.7.3"
 
 [libraries]
 # AndroidX
@@ -32,6 +33,10 @@ wear-compose-material = { module = "androidx.wear.compose:compose-material", ver
 # Compose
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-ui" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-ui" }
+
+## Kotlin
+kotlin-coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutine" }
+kotlin-coroutine-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin-coroutine" }
 
 accompanist-permission = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist-permission" }
 play-service-location = { module = "com.google.android.gms:play-services-location", version.ref = "google-location" }
