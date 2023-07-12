@@ -50,7 +50,6 @@ fun WearApp(
     var testText: String by remember { mutableStateOf("") }
     LaunchedEffect(Unit) {
         launch {
-            testText = viewModel.getTest()
         }
     }
     MyVehicleForWatchTheme {

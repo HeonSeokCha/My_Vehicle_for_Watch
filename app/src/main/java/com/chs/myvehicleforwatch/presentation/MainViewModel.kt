@@ -11,7 +11,5 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val myVehicleService: MyVehicleService
 ) : ViewModel() {
-    suspend fun getTest(): String {
-        return myVehicleService.test()
-    }
+
 }

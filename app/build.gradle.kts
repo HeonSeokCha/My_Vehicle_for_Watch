@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     kotlin("android")
@@ -16,6 +18,9 @@ android {
         targetSdk = libs.versions.targetSdkVersion.get().toInt()
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = libs.versions.versionName.get()
+
+        buildConfigField("String", "OPEN_API_KEY", getApiKey("OPEN_API_KEY"))
+        buildConfigField("String", "BUS_API_KEY", getApiKey("BUS_API_KEY"))
 
     }
     buildTypes {
@@ -56,4 +61,8 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
+}
+
+fun getApiKey(propertyKey: String): String {
+    return gradleLocalProperties(rootDir).getProperty(propertyKey)
 }

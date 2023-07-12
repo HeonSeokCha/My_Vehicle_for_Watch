@@ -1,5 +1,5 @@
 [versions]
-androidStudioGradlePlugin  = "8.0.2"
+androidGradlePlugin = "8.0.2"
 
 compileSdkVersion = "33"
 minSdkVersion = "30"
@@ -82,8 +82,8 @@ ktor = [
 ]
 
 [plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-android-application = { id = "com.android.application", version.ref = "androidStudioGradlePlugin" }
-android-library = { id = "com.android.library", version.ref = "androidStudioGradlePlugin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
