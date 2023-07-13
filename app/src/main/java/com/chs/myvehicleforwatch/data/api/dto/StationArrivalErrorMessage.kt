@@ -1,12 +1,14 @@
 package com.chs.myvehicleforwatch.data.api.dto
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class StationArrivalErrorMessage(
-    val status: Int,
-    val code: String,
-    val message: String,
-    val link: String,
-    val total: Int
+    @SerialName("status")
+    val status: Int? = null,
+    @SerialName("code")
+    val code: String? = null,
+    @SerialName("message")
+    val message: String? = null,
 )

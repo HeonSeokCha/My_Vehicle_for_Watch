@@ -1,4 +1,4 @@
-package com.chs.myvehicleforwatch.data
+package com.chs.myvehicleforwatch.data.di
 
 import com.chs.myvehicleforwatch.data.api.MyVehicleService
 import dagger.Module
