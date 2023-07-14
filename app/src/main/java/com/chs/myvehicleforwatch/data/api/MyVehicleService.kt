@@ -1,5 +1,6 @@
 package com.chs.myvehicleforwatch.data.api
 
+import android.util.Log
 import com.chs.myvehicleforwatch.common.Constants
 import com.chs.myvehicleforwatch.data.api.dto.ResponseSearchResultSubWay
 import com.chs.myvehicleforwatch.data.api.dto.ResponseStationArrival
@@ -17,9 +18,11 @@ class MyVehicleService @Inject constructor(
         query: String,
         page: Int = 0,
     ): ResponseSearchResultSubWay {
-        return client.get(
+        val a: ResponseSearchResultSubWay = client.get(
             "${Constants.OPEN_API_SEARCH_SUBWAY_URL}/$page/10/$query"
         ).body()
+        Log.e("TEST", a.toString())
+        return a
     }
 
     suspend fun getArrivalInfoSubWay(

@@ -26,7 +26,11 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.Text
 import androidx.wear.compose.material.TimeText
+import androidx.wear.compose.navigation.SwipeDismissableNavHost
+import androidx.wear.compose.navigation.composable
+import androidx.wear.compose.navigation.rememberSwipeDismissableNavController
 import com.chs.myvehicleforwatch.R
+import com.chs.myvehicleforwatch.presentation.search.SearchScreen
 import com.chs.myvehicleforwatch.presentation.theme.MyVehicleForWatchTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -36,8 +40,24 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            WearApp("Android")
+            val navController = rememberSwipeDismissableNavController()
+            MyVehicleForWatchTheme {
+                Scaffold(
+                    timeText = { TimeText() }
+                ) {
+                    SwipeDismissableNavHost(
+                        navController = navController,
+                        startDestination = Screens.SearchScreen.route
+                    ) {
+                        composable(Screens.SearchScreen.route) {
+                            SearchScreen()
+                        }
 
+                        composable(Screens.ArrivalInfoScreen.route) {
+                        }
+                    }
+                }
+            }
         }
     }
 }
