@@ -80,6 +80,7 @@ compose = [
     "compose-ui-tooling-preview",
     "compose-wear-navigation",
     "androidX-wear",
+    "wear-compose-foundation",
     "wear-tile",
     "wear-tile-metarial",
     "wear-compose-material"
