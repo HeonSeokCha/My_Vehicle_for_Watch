@@ -53,4 +53,8 @@ class SearchViewModel @Inject constructor(
             }
         }
     }
+
+    fun addFavoriteVehicle() {
+
+    }
 }

@@ -18,11 +18,9 @@ class MyVehicleService @Inject constructor(
         query: String,
         page: Int = 0,
     ): ResponseSearchResultSubWay {
-        val a: ResponseSearchResultSubWay = client.get(
+       return client.get(
             "${Constants.OPEN_API_SEARCH_SUBWAY_URL}/$page/10/$query"
         ).body()
-        Log.e("TEST", a.toString())
-        return a
     }
 
     suspend fun getArrivalInfoSubWay(

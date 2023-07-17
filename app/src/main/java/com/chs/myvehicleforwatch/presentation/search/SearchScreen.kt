@@ -15,6 +15,7 @@ import androidx.wear.compose.foundation.lazy.AutoCenteringParams
 import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
 import androidx.wear.compose.foundation.lazy.items
 import androidx.wear.compose.material.Button
+import androidx.wear.compose.material.CircularProgressIndicator
 import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.Text
 import com.chs.myvehicleforwatch.presentation.StationInfoCard
@@ -27,7 +28,6 @@ fun SearchScreen(
 
     LaunchedEffect(state.searchQuery) {
         if (state.searchQuery != null) {
-            Log.e("TEST", state.searchQuery!!)
             viewModel.getSearchResult(state.searchQuery!!)
         }
     }
@@ -38,13 +38,21 @@ fun SearchScreen(
     ) {
         if (state.searchResultList.isEmpty()) {
             item {
-                if (state.isError != null) {
-                    Text(state.isError!!)
-                } else {
-                    Button(onClick = {
-                        viewModel.searchStation("태릉입구")
-                    }) {
-                        Icon(imageVector = Icons.Default.Search , contentDescription = null)
+                when {
+                    state.isError != null -> {
+                        Text(state.isError!!)
+                    }
+
+                    state.isLoading -> {
+                        CircularProgressIndicator()
+                    }
+
+                    else -> {
+                        Button(onClick = {
+                            viewModel.searchStation("태릉입구")
+                        }) {
+                            Icon(imageVector = Icons.Default.Search , contentDescription = null)
+                        }
                     }
                 }
             }

@@ -21,9 +21,11 @@ kotlin-coroutine = "1.7.3"
 hilt = "2.46.1"
 ktor = "2.3.2"
 wear-tile = "1.2.0-beta01"
+room = "2.5.2"
+ksp = "1.8.22-1.0.11"
 
 [libraries]
-# AndroidX
+## AndroidX
 androidX-core-ktx = "androidx.core:core-ktx:1.10.1"
 androidX-wear = { module = "androidx.wear:wear", version.ref = "androidx-wear" }
 androidX-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose-ui" }
@@ -32,13 +34,13 @@ androidX-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidX-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 androidX-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 
-# Wear
+## Wear
 wear-compose-foundation = { module = "androidx.wear.compose:compose-foundation", version.ref = "androidx-wear-compose" }
 wear-compose-material = { module = "androidx.wear.compose:compose-material", version.ref = "androidx-wear-compose" }
 wear-tile = { module = "androidx.wear.tiles:tiles", version.ref = "wear-tile" }
 wear-tile-metarial = { module = "androidx.wear.tiles:tiles-material", version.ref = "wear-tile" }
 
-# Compose
+## Compose
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-ui" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-ui" }
 compose-wear-navigation = { module = "androidx.wear.compose:compose-navigation", version.ref = "androidx-wear-compose" }
@@ -47,7 +49,7 @@ compose-wear-navigation = { module = "androidx.wear.compose:compose-navigation",
 kotlin-coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutine" }
 kotlin-coroutine-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin-coroutine" }
 
-#$ Hilt
+## Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation-compose = "androidx.hilt:hilt-navigation-compose:1.1.0-alpha01"
@@ -59,6 +61,11 @@ ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", versi
 ktor-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor"}
 ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor"}
 kotlin-serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
+
+## Room
+androidX-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidX-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidX-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 
 accompanist-permission = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist-permission" }
 play-service-location = { module = "com.google.android.gms:play-services-location", version.ref = "google-location" }
@@ -101,3 +108,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
