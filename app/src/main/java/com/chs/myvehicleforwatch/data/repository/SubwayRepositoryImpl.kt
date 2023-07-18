@@ -64,4 +64,16 @@ class SubwayRepositoryImpl @Inject constructor(
             }
         }
     }
+
+    override fun getFavoriteStation(): Flow<List<StationInfo>> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun insertFavoriteStation(stationInfo: StationInfo) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun deleteFavoriteStation(stationInfo: StationInfo) {
+        TODO("Not yet implemented")
+    }
 }

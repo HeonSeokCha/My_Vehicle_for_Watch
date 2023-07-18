@@ -49,12 +49,6 @@ class MainActivity : ComponentActivity() {
                         navController = navController,
                         startDestination = Screens.SearchScreen.route
                     ) {
-                        composable(Screens.SearchScreen.route) {
-                            SearchScreen()
-                        }
-
-                        composable(Screens.ArrivalInfoScreen.route) {
-                        }
                     }
                 }
             }
