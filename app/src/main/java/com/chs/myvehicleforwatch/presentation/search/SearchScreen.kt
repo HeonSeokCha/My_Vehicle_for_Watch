@@ -48,11 +48,6 @@ fun SearchScreen(
                     }
 
                     else -> {
-                        Button(onClick = {
-                            viewModel.searchStation("태릉입구")
-                        }) {
-                            Icon(imageVector = Icons.Default.Search , contentDescription = null)
-                        }
                     }
                 }
             }

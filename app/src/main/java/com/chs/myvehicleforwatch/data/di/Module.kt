@@ -1,9 +1,15 @@
 package com.chs.myvehicleforwatch.data.di
 
+import android.content.Context
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import com.chs.myvehicleforwatch.data.api.MyVehicleService
+import com.chs.myvehicleforwatch.data.db.MyVehicleDatabase
+import com.chs.myvehicleforwatch.data.db.VehicleDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
@@ -36,5 +42,21 @@ object Module {
                 }
             }
         )
+    }
+
+    @Singleton
+    @Provides
+    fun provideMyVehicleDatabase(@ApplicationContext app: Context): MyVehicleDatabase {
+        return Room.databaseBuilder(
+            app,
+            MyVehicleDatabase::class.java,
+            "my_vehicle_db"
+        ).build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideVehicleDao(db: MyVehicleDatabase): VehicleDao {
+        return db.vehicleDao
     }
 }

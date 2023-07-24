@@ -1,7 +1,8 @@
 [versions]
-androidGradlePlugin = "8.0.2"
+androidGradlePlugin = "8.1.0"
 
 compileSdkVersion = "34"
+kotlinGradlePlugin = "1.8.22"
 minSdkVersion = "30"
 targetSdkVersion = "33"
 versionCode = "1"
@@ -35,6 +36,7 @@ androidX-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-ru
 androidX-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 
 ## Wear
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 wear-compose-foundation = { module = "androidx.wear.compose:compose-foundation", version.ref = "androidx-wear-compose" }
 wear-compose-material = { module = "androidx.wear.compose:compose-material", version.ref = "androidx-wear-compose" }
 wear-tile = { module = "androidx.wear.tiles:tiles", version.ref = "wear-tile" }
