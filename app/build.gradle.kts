@@ -2,9 +2,8 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 
 plugins {
     kotlin("android")
-    kotlin("kapt")
-    alias(libs.plugins.android.application)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
 }
@@ -74,7 +73,7 @@ dependencies {
 
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(libs.androidX.room.ktx)
     ksp(libs.androidX.room.compiler)

@@ -1,14 +1,12 @@
 package com.chs.myvehicleforwatch.data.db
 
-import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 
-@Dao
 interface BaseDao<T> {
     @Insert
-    suspend fun<T> insert()
+    suspend fun insert(entity: T)
 
     @Delete
-    suspend fun<T> delete(entity: T)
+    suspend fun delete(entity: T)
 }
