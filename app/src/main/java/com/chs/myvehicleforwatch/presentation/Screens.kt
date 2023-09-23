@@ -3,7 +3,7 @@ package com.chs.myvehicleforwatch.presentation
 sealed class Screens(
     val route: String
 ) {
-    object FavoriteScreen : Screens("favoriteScreen")
-    object SearchScreen : Screens("searchScreen")
-    object ArrivalInfoScreen : Screens("arrivalInfoScreen")
+    data object FavoriteScreen : Screens("favoriteScreen")
+    data object SearchScreen : Screens("searchScreen")
+    data object ArrivalInfoScreen : Screens("arrivalInfoScreen")
 }

@@ -3,8 +3,8 @@ package com.chs.myvehicleforwatch.presentation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.composable
 import androidx.wear.compose.navigation.SwipeDismissableNavHost
+import androidx.wear.compose.navigation.composable
 import com.chs.myvehicleforwatch.presentation.favorite.FavoriteScreen
 import com.chs.myvehicleforwatch.presentation.search.SearchScreen
 
@@ -19,7 +19,7 @@ fun MainNavHost(
         startDestination = Screens.FavoriteScreen.route
     ) {
         composable(Screens.FavoriteScreen.route) {
-            FavoriteScreen()
+            FavoriteScreen(navController)
         }
         composable(Screens.SearchScreen.route) {
             SearchScreen()
